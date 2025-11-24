@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #e0e7ff 0%, #fbf8cc 100%);
+      color: #232946;
+    }
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      background: linear-gradient(135deg, #1b274f 0%, #4276a7 100%);
+      color: #fff;
+      min-width: 260px;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-top-right-radius: 90px;
+      box-shadow: 2px 0 12px rgba(64, 123, 167, 0.12);
+    }
+    .sidebar h2 {
+      font-size: 2.2em;
+      letter-spacing: 2px;
+      margin-bottom: 0.3em;
+      font-weight: 700;
+      text-shadow: 1px 1px 6px #2a435a77;
+    }
+    .sidebar img {
+      border-radius: 40% 60% 50% 50%;
+      margin: 24px 0;
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      box-shadow: 0 0 0 5px #fff3, 0 4px 12px #21233544;
+    }
+    .sidebar p {
+      margin: 0.3em 0;
+      font-weight: 500;
+      letter-spacing: 1px;
+      font-size: 1.03em;
+    }
+    .sidebar .contact {
+      margin-top: 1.1em;
+      font-size: 0.99em;
+    }
+    .controls {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .button {
+      background: #ffbd59;
+      color: #1b274f;
+      border: none;
+      border-radius: 22px;
+      font-weight: 700;
+      padding: 10px 24px;
+      font-size: 1.01em;
+      cursor: pointer;
+      transition: background 0.16s, color 0.16s, box-shadow 0.16s;
+      box-shadow: 0 2px 10px #ffbd5929;
+      text-decoration: none;
+      outline: none;
+    }
+    .button:hover {
+      background: #4276a7;
+      color: #fff;
+      box-shadow: 0 4px 18px #1b274f33;
+    }
+    .main {
+      padding: 46px 56px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .main h1 {
+      margin: 0;
+      font-size: 2em;
+      letter-spacing: 2.5px;
+      color: #4276a7;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .section {
+      background: #fff9;
+      border-radius: 26px 8px 32px 24px;
+      box-shadow: 0 6px 16px #dde6ed88;
+      padding: 26px 32px 18px 24px;
+      margin-bottom: 18px;
+    }
+    .section h3 {
+      margin-top: 0;
+      font-size: 1.33em;
+      color: #232946;
+      letter-spacing: 1px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #4276a766;
+    }
+    ul {
+      margin-top: 8px;
+      margin-bottom: 0;
+      padding-left: 1.2em;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .skills span {
+      background: linear-gradient(90deg, #fbc2eb 0%, #a6c1ee 100%);
+      color: #232946;
+      padding: 8px 20px;
+      border-radius: 18px;
+      font-weight: 500;
+      font-size: 1em;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 820px) {
+      .container { flex-direction: column; }
+      .main { padding: 26px 10vw; }
+      .sidebar { min-width: unset; border-top-right-radius: 50px;}
+    }
+    
+    <script>
+      
+    function goBack() {
+      window.history.back();
+    }
+    function downloadResume() {
+      const element = document.createElement('a');
+      const html = document.documentElement.outerHTML;
+      const blob = new Blob([html], {type: 'text/html'});
+      element.href = URL.createObjectURL(blob);
+      element.download = "resume.html";
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }
+  </script>
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <img src="Radhika.jpg" alt="Profile Photo">
+      <h2>Rahika kaldoddi</h2>
+      <p>Student </p>
+      <p class="contact">
+        jradhika137@gmail.com<br>
+        9353565008<br>
+        Aurad(s),Bidar
+      </p>
+      <div class="controls">
+        <button class="button" onclick="goBack()">Back</button>
+        <button class="button" onclick="downloadResume()">Download</button>
+      </div>
+    </aside>
+    <main class="main">
+      <h1>Resume</h1>
+      <section class="section">
+        <h3>Profile</h3>
+        <p>
+          VTU university student passionate about web development, design, and analytics. Committed to learning, teamwork, and building creative digital solutions.
+        </p>
+      </section>
+      <section class="section">
+        <h3>Project</h3>
+        <ul>
+          <li>
+            Online porfilio website-built using HTML,CSS
+           
+          </li>
+          <li>
+            Student result management system-java project
+          </li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3>Education</h3>
+        <ul>
+          <li> B E .in Computer Science & Engineering,maratha mandal engineering college,Belagavi(expected)</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3>Skills</h3>
+        <div class="skills">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+        </div>
+      </section>
+      <section class="section">
+        <h3>Languages</h3>
+        <ul>
+          <li>English (Fluent)</li>
+          <li>Kannada (Native)</li>
+          <li>Hindi (Conversational)</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
